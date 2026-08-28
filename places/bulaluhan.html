@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Eli's Bulaluhan - Quiet Hours</title>
+    <title>Eli's Bulaluhan - Bangkal Food Spots</title>
 </head>
 
 <body>
 
     <header>
-        <h1>Quiet Hours</h1>
+        <h1>Bangkal Food Spots</h1>
 
         <p>A guide to peaceful places where you can pause, relax, and enjoy your free time.</p>
     </header>
@@ -56,6 +56,68 @@
                 <td>Casual dining, catching up with friends, and enjoying hot soup</td>
             </tr>
         </table>
+
+        <!-- Suggest-a-Place Form -->
+        <section>
+          <h2>Suggest a Spot Like Eli's Bulaluhan</h2>
+          <form action="#" method="POST">
+            
+            <!-- 1. Place Name (Required Text Input) -->
+            <div>
+              <label for="place-name">Place Name:</label>
+              <input type="text" id="place-name" name="place_name" value="Eli's Bulaluhan" required>
+            </div>
+
+            <!-- 2. Category (Radio Buttons in a Fieldset with Legend) -->
+            <fieldset>
+              <legend>Category (Select One)</legend>
+              
+              <div>
+                <input type="radio" id="cat-food" name="category" value="food" checked>
+                <label for="cat-food">Food & Drinks</label>
+              </div>
+
+              <div>
+                <input type="radio" id="cat-study" name="category" value="study">
+                <label for="cat-study">Study Spot</label>
+              </div>
+
+              <div>
+                <input type="radio" id="cat-hangout" name="category" value="hangout">
+                <label for="cat-hangout">Hangout Spot</label>
+              </div>
+            </fieldset>
+
+            <!-- 3. What's Good About It (Checkboxes sharing one name) -->
+            <fieldset>
+              <legend>What's good about it? (Select all that apply)</legend>
+
+              <div>
+                <input type="checkbox" id="good-affordable" name="features" value="affordable" checked>
+                <label for="good-affordable">Affordable / Student-friendly</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="good-delicious" name="features" value="delicious" checked>
+                <label for="good-delicious">Great Bulalo & Soup</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="good-groups" name="features" value="groups">
+                <label for="good-groups">Good for Groups</label>
+              </div>
+            </fieldset>
+
+            <!-- 4. Contact Email (Required Email Input) -->
+            <div>
+              <label for="contact-email">Contact Email:</label>
+              <input type="email" id="contact-email" name="contact_email" placeholder="yourname@example.com" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Suggestion</button>
+          </form>
+        </section>
     </main>
 
     <nav>
