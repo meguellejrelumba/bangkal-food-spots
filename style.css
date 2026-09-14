@@ -1,12 +1,15 @@
-
+/* 1. CSS VARIABLES */
 :root {
   --brand-color: #2b6cb0;
   --dark-ink: #1a202c;
   --muted-grey: #718096;
   --light-bg: #f7fafc;
+  --brand: #2a6f97;
+  --card-bg: #f8f9fa;
+  --text-dark: #2b2d42;
 }
 
-
+/* 2. BASE & RESET STYLES */
 *,
 *::before,
 *::after {
@@ -21,78 +24,151 @@ body {
   margin: 0;
 }
 
-
+/* 3. FLEXBOX HEADER & NAVIGATION */
+.site-header,
 header {
   background-color: #ffffff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid var(--muted-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--brand);
+}
+
+.header-brand p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted-grey);
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: 20px;
 }
 
 nav li {
-  display: inline-block;
-  margin-right: 1rem;
+  display: block;
 }
 
 nav a {
   color: var(--brand-color);
   text-decoration: none;
+  font-weight: 500;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
+/* 4. MAIN CONTENT & CENTERED SECTION */
 main {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-footer {
+main > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
   text-align: center;
-  padding: 2rem 1rem;
-  color: var(--muted-grey);
-  border-top: 1px solid var(--muted-grey);
-}
-
-
-.product-card {
-  background-color: #ffffff;
-  border: 1px solid var(--muted-grey);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-:root {
-  --brand: #2a6f97;
-  --card-bg: #f8f9fa;
-  --text-dark: #2b2d42;
-}
-
-
-.product-card {
+  margin-bottom: 2rem;
   background-color: var(--card-bg);
   border-radius: 8px;
-  padding: 16px;
+  padding: 1rem;
   border-left: 5px solid var(--brand);
-  margin-bottom: 20px;
+}
+
+main > section h2 {
+  margin: 0 0 5px 0;
+  color: var(--brand);
+}
+
+main > section p {
+  margin: 0 0 10px 0;
+  color: var(--dark-ink);
+}
+
+main > section img {
+  max-height: 100px;
+  width: auto;
+  border-radius: 6px;
+}
+
+/* 5. PRODUCT/GUIDE GRID & MATCHING SHOP CARDS */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.product-card,
+.guide-card,
+main article {
+  flex: 1 1 240px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 5px solid var(--brand);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .product-card h2,
-.product-card h3 {
+.product-card h3,
+.guide-card h2,
+.guide-card h3,
+main article h3 {
   font-size: 1.4rem;
   color: var(--brand);
   margin-top: 0;
 }
 
+.product-card img,
+.guide-card img,
+main article img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  margin: 15px 0;
+}
 
+.product-card a,
+.guide-card a,
+main article a {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: var(--brand);
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.product-card a:hover,
+.guide-card a:hover,
+main article a:hover {
+  background-color: var(--brand-color);
+  text-decoration: none;
+}
+
+/* 6. FORMS & INPUTS */
 fieldset {
   padding: 20px;
   border-radius: 8px;
@@ -129,10 +205,17 @@ input[type="submit"] {
   font-weight: bold;
 }
 
-
 input:focus,
 textarea:focus,
 button:focus {
   outline: 3px solid var(--brand);
   outline-offset: 2px;
+}
+
+/* 7. FOOTER STYLES */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted-grey);
+  border-top: 1px solid var(--muted-grey);
 }
